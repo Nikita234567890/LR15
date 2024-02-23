@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вывод всех потомков body</title>
+</head>
+<body>
+    <h1>Пример документа</h1>
+    <p>Это абзац.</p>
+    <form>
+        <label for="inputField">Введите текст:</label>
+        <input type="text" id="inputField" name="inputField">
+        <input type="submit" value="Отправить">
+    </form>
+    <div>
+        <p>Другой абзац внутри div.</p>
+    </div>
+    <script>
+        // Получаем ссылку на элемент body
+        var body = document.body;
+        // Получаем всех потомков тега body
+        var bodyChildren = body.children;
+
+        for (var i = 0; i < bodyChildren.length; i++) {
+            if (i < 2) {
+                // Выводим тип узла для первых двух элементов
+                document.write("Тип узла элемента " + i + ": " + bodyChildren[i].nodeType + "<br>");
+            }
+            // Выводим всех потомков тега body
+            document.write(bodyChildren[i].outerHTML + "<br>");
+            
+        }
+       
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример</title>
+</head>
+<body>
+  <h1>Нумерованный список месяцев</h1>
+  <ol id="monthsList">
+    <li>Январь</li>
+    <li>Февраль</li>
+    <li>Март</li>
+    <li>Апрель</li>
+    <li>Май</li>
+    <li>Июнь</li>
+    <li>Июль</li>
+    <li>Август</li>
+    <li>Сентябрь</li>
+    <li>Октябрь</li>
+    <li>Ноябрь</li>
+    <li>Декабрь</li>
+  </ol>
+
+  <script>
+    const months = document.getElementById('monthsList').getElementsByTagName('li');
+    const table = document.createElement('table');
+    const tableBody = document.createElement('tbody');
+
+    for (let i = 0; i < months.length; i++) {
+      const row = tableBody.insertRow();
+      const cell1 = row.insertCell(0);
+      const cell2 = row.insertCell(1);
+      cell1.textContent = i + 1;
+      cell2.textContent = months[i].textContent;
+    }
+
+    table.appendChild(tableBody);
+    document.body.appendChild(table);
+  </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример</title>
+</head>
+<body>
+  <h1>Нумерованный список месяцев</h1>
+  <ol id="monthsList">
+    <li>Январь</li>
+    <li>Февраль</li>
+    <li>Март</li>
+    <li>Апрель</li>
+    <li>Май</li>
+    <li>Июнь</li>
+    <li>Июль</li>
+    <li>Август</li>
+    <li>Сентябрь</li>
+    <li>Октябрь</li>
+    <li>Ноябрь</li>
+    <li>Декабрь</li>
+  </ol>
+
+  <script>
+    const months = document.getElementById('monthsList').getElementsByTagName('li');
+    const table = document.createElement('table');
+    const tableBody = document.createElement('tbody');
+
+    for (let i = 0; i < months.length; i++) {
+      const row = tableBody.insertRow();
+      const cell1 = row.insertCell(0);
+      const cell2 = row.insertCell(1);
+      cell1.textContent = i + 1;
+      cell2.textContent = months[i].textContent;
+    }
+
+    table.appendChild(tableBody);
+    document.body.appendChild(table);
+    const monthsList = document.getElementById('monthsList');
+const newMonth = document.createElement('li');
+newMonth.textContent = '13-го месяца не бывает';
+monthsList.appendChild(newMonth);
+
+const monthsList2 = document.getElementById('monthsList');
+const thirteenthMonth = monthsList2.children[12]; // Получаем 13-ый пункт списка (индекс 12, так как индексация начинается с 0)
+
+const daysOfWeek = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+const daysList = document.createElement('ul');
+
+daysOfWeek.forEach(day => {
+  const listItem = document.createElement('li');
+  listItem.textContent = day;
+  daysList.appendChild(listItem);
+});
+
+thirteenthMonth.appendChild(daysList);
+  </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример</title>
+</head>
+<body>
+    <main>
+        <h1>Заголовок 1</h1>
+        <h2>Заголовок 2</h2>
+        <h3>Заголовок 3</h3>
+      </main>
+      <button id="showHeadingsButton">Показать заголовки</button>
+      <div id="output"></div>
+
+  <script>
+   const mainElement = document.querySelector('main');
+const button = document.getElementById('showHeadingsButton');
+const outputElement = document.getElementById('output');
+
+button.addEventListener('click', function() {
+  const headings = mainElement.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  let headingsContent = '';
+  headings.forEach(heading => {
+    headingsContent += heading.textContent + '<br>';
+  });
+  outputElement.innerHTML = headingsContent;
+});
+  </script>
+</body>
+</html>
+ -->
+
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Пример</title>
+  </head>
+  <body>
+    <input type="radio" id="radioYes" name="answer" value="yes" />
+    <label for="radioYes">Да</label>
+    <input type="radio" id="radioNo" name="answer" value="no" />
+    <label for="radioNo">Нет</label>
+    <div id="output">Текст для изменения цвета</div>
+
+    <script>
+      const radioYes = document.getElementById("radioYes");
+      const radioNo = document.getElementById("radioNo");
+      const outputElement = document.getElementById("output");
+
+      function updateTextColor() {
+        if (radioYes.checked) {
+          outputElement.style.color = "red";
+        } else if (radioNo.checked) {
+          outputElement.style.color = "blue";
+        }
+      }
+
+      radioYes.addEventListener("change", updateTextColor);
+      radioNo.addEventListener("change", updateTextColor);
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест по явлениям природы</title>
+</head>
+<body>
+  <h1>Тест по явлениям природы</h1>
+
+  <div id="questions">
+    <div class="question">
+      <p>1. Что вызывает появление радуги?</p>
+      <input type="radio" name="q1" value="a"> a) Дождь<br>
+      <input type="radio" name="q1" value="b"> b) Снег<br>
+      <input type="radio" name="q1" value="c"> c) Солнце<br>
+    </div>
+
+    <div class="question">
+      <p>2. Какие из перечисленных явлений относятся к атмосферным осадкам?</p>
+      <input type="checkbox" name="q2a" value="a"> a) Дождь<br>
+      <input type="checkbox" name="q2b" value="b"> b) Снег<br>
+      <input type="checkbox" name="q2c" value="c"> c) Град<br>
+    </div>
+
+    <div class="question">
+      <p>3. Что такое торнадо?</p>
+      <input type="text" id="q3Answer">
+    </div>
+  </div>
+
+  <button onclick="showResults()">Результат</button>
+
+  <div id="results"></div>
+
+  <script>
+    function showResults() {
+      const resultElement = document.getElementById('results');
+      const q1Answer = document.querySelector('input[name="q1"]:checked');
+      const q2Answers = document.querySelectorAll('input[name^="q2"]:checked');
+      const q3Answer = document.getElementById('q3Answer').value;
+
+      let incorrectAnswers = [];
+
+      if (q1Answer && q1Answer.value !== 'c') {
+        incorrectAnswers.push("1. Что вызывает появление радуги?");
+      }
+
+      const correctQ2Answers = ['a', 'b', 'c'];
+      const selectedQ2Answers = Array.from(q2Answers).map(answer => answer.value);
+      if (!correctQ2Answers.every(answer => selectedQ2Answers.includes(answer))) {
+        incorrectAnswers.push("2. Какие из перечисленных явлений относятся к атмосферным осадкам?");
+      }
+
+      if (q3Answer.toLowerCase() !== "смерч") {
+        incorrectAnswers.push("3. Что такое торнадо?");
+      }
+
+      if (incorrectAnswers.length === 0) {
+        resultElement.innerHTML = "Поздравляем! Все ответы верны!";
+      } else {
+        resultElement.innerHTML = "Неверные ответы:<br>" + incorrectAnswers.join("<br>");
+      }
+    }
+  </script>
+</body>
+</html> -->
+
+
